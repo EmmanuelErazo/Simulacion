@@ -1,0 +1,15 @@
+D:\Ejercicio 2\bin\Debug\Ejercicio 2.exe.config
+D:\Ejercicio 2\bin\Debug\Ejercicio 2.exe
+D:\Ejercicio 2\bin\Debug\Ejercicio 2.pdb
+D:\Ejercicio 2\bin\Debug\Ejercicio 2.xml
+D:\Ejercicio 2\obj\Debug\Ejercicio 2.vbprojAssemblyReference.cache
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.frm_Dia_nubaldo_o_lluvioso.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.frm_dia_soleado.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.frm_Distribución_Prob_Clima.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.frm_menu.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.Resources.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio_2.frm_simulacion.resources
+D:\Ejercicio 2\obj\Debug\Ejercicio 2.vbproj.GenerateResource.cache
+D:\Ejercicio 2\obj\Debug\Ejercicio 2.exe
+D:\Ejercicio 2\obj\Debug\Ejercicio 2.xml
+D:\Ejercicio 2\obj\Debug\Ejercicio 2.pdb
