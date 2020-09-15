@@ -33,6 +33,8 @@ Partial Class frm_menu
         Me.cmdSimulacion = New System.Windows.Forms.Button()
         Me.cmb_tabla_referencia = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RbnCompraDiaria = New System.Windows.Forms.RadioButton()
+        Me.RbnDemandaDiaAnterior = New System.Windows.Forms.RadioButton()
         Me.txt_compra_diaria = New System.Windows.Forms.TextBox()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -46,10 +48,14 @@ Partial Class frm_menu
         Me.cmbCargarEjemplo = New System.Windows.Forms.Button()
         Me.cmbLimpiar = New System.Windows.Forms.Button()
         Me.cmbGenerar = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RbnCompraDiaria = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.LblPrecioCompraFaltante = New System.Windows.Forms.Label()
+        Me.RbnSiComprar = New System.Windows.Forms.RadioButton()
+        Me.RbnNoComprar = New System.Windows.Forms.RadioButton()
+        Me.TxtPrecioCompraFaltante = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.groupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -138,14 +144,36 @@ Partial Class frm_menu
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.RbnCompraDiaria)
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
+        Me.GroupBox2.Controls.Add(Me.RbnDemandaDiaAnterior)
         Me.GroupBox2.Controls.Add(Me.txt_compra_diaria)
-        Me.GroupBox2.Location = New System.Drawing.Point(32, 291)
+        Me.GroupBox2.Location = New System.Drawing.Point(278, 127)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(216, 85)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Compra Diaria de Flores"
+        '
+        'RbnCompraDiaria
+        '
+        Me.RbnCompraDiaria.AutoSize = True
+        Me.RbnCompraDiaria.Checked = True
+        Me.RbnCompraDiaria.Location = New System.Drawing.Point(15, 45)
+        Me.RbnCompraDiaria.Name = "RbnCompraDiaria"
+        Me.RbnCompraDiaria.Size = New System.Drawing.Size(91, 17)
+        Me.RbnCompraDiaria.TabIndex = 2
+        Me.RbnCompraDiaria.TabStop = True
+        Me.RbnCompraDiaria.Text = "Compra Diaria"
+        Me.RbnCompraDiaria.UseVisualStyleBackColor = True
+        '
+        'RbnDemandaDiaAnterior
+        '
+        Me.RbnDemandaDiaAnterior.AutoSize = True
+        Me.RbnDemandaDiaAnterior.Location = New System.Drawing.Point(15, 22)
+        Me.RbnDemandaDiaAnterior.Name = "RbnDemandaDiaAnterior"
+        Me.RbnDemandaDiaAnterior.Size = New System.Drawing.Size(129, 17)
+        Me.RbnDemandaDiaAnterior.TabIndex = 1
+        Me.RbnDemandaDiaAnterior.Text = "Demanda Dia Anterior"
+        Me.RbnDemandaDiaAnterior.UseVisualStyleBackColor = True
         '
         'txt_compra_diaria
         '
@@ -166,7 +194,7 @@ Partial Class frm_menu
         Me.groupBox1.Controls.Add(Me.label8)
         Me.groupBox1.Controls.Add(Me.label7)
         Me.groupBox1.Controls.Add(Me.txt_precio_reventa)
-        Me.groupBox1.Location = New System.Drawing.Point(32, 128)
+        Me.groupBox1.Location = New System.Drawing.Point(32, 111)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.Size = New System.Drawing.Size(216, 154)
         Me.groupBox1.TabIndex = 8
@@ -272,33 +300,64 @@ Partial Class frm_menu
         Me.cmbGenerar.Text = "Generar"
         Me.cmbGenerar.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'GroupBox3
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(15, 22)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(129, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.Text = "Demanda Dia Anterior"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.TxtPrecioCompraFaltante)
+        Me.GroupBox3.Controls.Add(Me.LblPrecioCompraFaltante)
+        Me.GroupBox3.Controls.Add(Me.RbnSiComprar)
+        Me.GroupBox3.Controls.Add(Me.RbnNoComprar)
+        Me.GroupBox3.Location = New System.Drawing.Point(32, 276)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(200, 100)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Compra De Mercaderia Faltante"
         '
-        'RbnCompraDiaria
+        'LblPrecioCompraFaltante
         '
-        Me.RbnCompraDiaria.AutoSize = True
-        Me.RbnCompraDiaria.Checked = True
-        Me.RbnCompraDiaria.Location = New System.Drawing.Point(15, 45)
-        Me.RbnCompraDiaria.Name = "RbnCompraDiaria"
-        Me.RbnCompraDiaria.Size = New System.Drawing.Size(91, 17)
-        Me.RbnCompraDiaria.TabIndex = 2
-        Me.RbnCompraDiaria.TabStop = True
-        Me.RbnCompraDiaria.Text = "Compra Diaria"
-        Me.RbnCompraDiaria.UseVisualStyleBackColor = True
+        Me.LblPrecioCompraFaltante.AutoSize = True
+        Me.LblPrecioCompraFaltante.Location = New System.Drawing.Point(12, 77)
+        Me.LblPrecioCompraFaltante.Name = "LblPrecioCompraFaltante"
+        Me.LblPrecioCompraFaltante.Size = New System.Drawing.Size(85, 13)
+        Me.LblPrecioCompraFaltante.TabIndex = 2
+        Me.LblPrecioCompraFaltante.Text = "Precio Compra $"
+        '
+        'RbnSiComprar
+        '
+        Me.RbnSiComprar.AutoSize = True
+        Me.RbnSiComprar.Location = New System.Drawing.Point(18, 52)
+        Me.RbnSiComprar.Name = "RbnSiComprar"
+        Me.RbnSiComprar.Size = New System.Drawing.Size(34, 17)
+        Me.RbnSiComprar.TabIndex = 1
+        Me.RbnSiComprar.TabStop = True
+        Me.RbnSiComprar.Text = "Si"
+        Me.RbnSiComprar.UseVisualStyleBackColor = True
+        '
+        'RbnNoComprar
+        '
+        Me.RbnNoComprar.AutoSize = True
+        Me.RbnNoComprar.Checked = True
+        Me.RbnNoComprar.Location = New System.Drawing.Point(18, 29)
+        Me.RbnNoComprar.Name = "RbnNoComprar"
+        Me.RbnNoComprar.Size = New System.Drawing.Size(39, 17)
+        Me.RbnNoComprar.TabIndex = 0
+        Me.RbnNoComprar.TabStop = True
+        Me.RbnNoComprar.Text = "No"
+        Me.RbnNoComprar.UseVisualStyleBackColor = True
+        '
+        'TxtPrecioCompraFaltante
+        '
+        Me.TxtPrecioCompraFaltante.Location = New System.Drawing.Point(116, 74)
+        Me.TxtPrecioCompraFaltante.Name = "TxtPrecioCompraFaltante"
+        Me.TxtPrecioCompraFaltante.Size = New System.Drawing.Size(52, 20)
+        Me.TxtPrecioCompraFaltante.TabIndex = 3
         '
         'frm_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(652, 388)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.cmbGenerar)
         Me.Controls.Add(Me.cmbLimpiar)
         Me.Controls.Add(Me.cmbCargarEjemplo)
@@ -320,6 +379,8 @@ Partial Class frm_menu
         Me.GroupBox2.PerformLayout()
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -350,5 +411,10 @@ Partial Class frm_menu
     Friend WithEvents cmbLimpiar As Button
     Friend WithEvents cmbGenerar As Button
     Friend WithEvents RbnCompraDiaria As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RbnDemandaDiaAnterior As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents LblPrecioCompraFaltante As Label
+    Friend WithEvents RbnSiComprar As RadioButton
+    Friend WithEvents RbnNoComprar As RadioButton
+    Friend WithEvents TxtPrecioCompraFaltante As TextBox
 End Class
