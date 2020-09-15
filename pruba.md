@@ -1,2 +1,0 @@
-# Simulacion
-verificando si funicona
