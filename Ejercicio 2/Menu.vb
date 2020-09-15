@@ -17,7 +17,7 @@
         frm_Distribución_Prob_Clima.Show()
     End Sub
 
-    Private Sub cmdSimulacion_Click(sender As Object, e As EventArgs) Handles cmdSimulacion.Click
+    Private Sub cmdSimulacion_Click(sender As Object, e As EventArgs)
         frm_simulacion.Show()
     End Sub
 
@@ -86,6 +86,33 @@
             txtHasta.Focus()
             Return False
         End If
+        If txt_precio_compra.Text.Trim() = "" Then
+            MessageBox.Show("Debe cargar el precio de compra")
+            txt_precio_compra.Focus()
+            Return False
+        End If
+        If txt_precio_venta.Text.Trim() = "" Then
+            MessageBox.Show("Debe cargar el precio de venta")
+            txt_precio_venta.Focus()
+            Return False
+        End If
+        If txt_precio_reventa.Text.Trim() = "" Then
+            MessageBox.Show("Debe cargar el precio de Reventa")
+            txt_precio_reventa.Focus()
+            Return False
+        End If
+        If txt_faltante.Text.Trim() = "" Then
+            MessageBox.Show("Debe cargar el precio de Faltante")
+            txt_faltante.Focus()
+            Return False
+        End If
+        If RbnSiComprar.Checked = True Then
+            If TxtPrecioCompraFaltante.Text.Trim() = "" Then
+                MessageBox.Show("Debe cargar el precio de compra de mercaderia faltante")
+                TxtPrecioCompraFaltante.Focus()
+                Return False
+            End If
+        End If
         If RbnCompraDiaria.Checked = True Then
             If txt_compra_diaria.Text.Trim() = "" Then
                 MessageBox.Show("Debe cargar la compra diria")
@@ -108,6 +135,7 @@
         If RbnSiComprar.Checked = True Then
             RbnNoComprar.Checked = True
         End If
+        CargarPrecio()
     End Sub
     Public Sub Limpiar()
         txtCantidadExperimento.Text = ""
@@ -222,20 +250,20 @@
                 Else
                     clima = CalcularClima(aleatorioClima)
                     demanda = CalcularDemanda(clima, aleatorioDemanda)
-                        If demanda > compra_diaria Then
-                            venta = compra_diaria
+                    If demanda > compra_diaria Then
+                        venta = compra_diaria
                         faltante = demanda - compra_diaria
                     Else
-                            venta = demanda
-                        End If
+                        venta = demanda
+                    End If
 
-                        If compra_diaria > venta Then
-                            sobrante = compra_diaria - venta
-                        Else
-                            sobrante = 0
-                        End If
+                    If compra_diaria > venta Then
+                        sobrante = compra_diaria - venta
+                    Else
+                        sobrante = 0
+                    End If
 
-                        gan_venta = venta * precio_venta
+                    gan_venta = venta * precio_venta
                     costo_compra = compra_diaria * precio_costo
                     If faltante > 0 And RbnSiComprar.Checked = True Then
                         costo_faltante = 0
@@ -247,42 +275,42 @@
                     gan_sobrante = sobrante * precio_reventa
                     gan_diaria = gan_venta - costo_compra + gan_sobrante - costo_faltante + venta_compra_faltante
                     acumulado = gan_diaria + acumulado_anterior
-                        media = (1 / fila) * ((fila - 1) * media_anterior + gan_diaria)
-                        Dim aux_acumulado As Double = Math.Round(acumulado, 2)
-                        Dim aux_media As Double = Math.Round(media, 2)
-                        Dim aux_ganancia_diaria As Double = Math.Round(gan_diaria, 2)
+                    media = (1 / fila) * ((fila - 1) * media_anterior + gan_diaria)
+                    Dim aux_acumulado As Double = Math.Round(acumulado, 2)
+                    Dim aux_media As Double = Math.Round(media, 2)
+                    Dim aux_ganancia_diaria As Double = Math.Round(gan_diaria, 2)
 
-                        dr("Dia") = fila.ToString
-                        dr("RndClima") = aleatorioClima.ToString
-                        dr("Clima") = clima.ToString
-                        dr("RndDemanda") = aleatorioDemanda.ToString
-                        dr("Demanda") = demanda.ToString
-                        dr("Venta") = venta.ToString
-                        dr("Sobrante") = sobrante.ToString
-                        dr("Faltante") = faltante.ToString
-                        dr("Gan Venta") = "$ " + gan_venta.ToString
-                        dr("Costo Compra") = "$ -" + costo_compra.ToString
-                        dr("Gan Sobrante") = "$ " + gan_sobrante.ToString
+                    dr("Dia") = fila.ToString
+                    dr("RndClima") = aleatorioClima.ToString
+                    dr("Clima") = clima.ToString
+                    dr("RndDemanda") = aleatorioDemanda.ToString
+                    dr("Demanda") = demanda.ToString
+                    dr("Venta") = venta.ToString
+                    dr("Sobrante") = sobrante.ToString
+                    dr("Faltante") = faltante.ToString
+                    dr("Gan Venta") = "$ " + gan_venta.ToString
+                    dr("Costo Compra") = "$ -" + costo_compra.ToString
+                    dr("Gan Sobrante") = "$ " + gan_sobrante.ToString
 
-                        If costo_faltante = 0 Then
-                            dr("Costo Faltante") = "$ " + costo_faltante.ToString
-                        Else
-                            dr("Costo Faltante") = "$ -" + costo_faltante.ToString
-                        End If
+                    If costo_faltante = 0 Then
+                        dr("Costo Faltante") = "$ " + costo_faltante.ToString
+                    Else
+                        dr("Costo Faltante") = "$ -" + costo_faltante.ToString
+                    End If
 
-                        dr("Gan Diaria") = "$ " + aux_ganancia_diaria.ToString
-                        dr("Gan Acumulado") = "$ " + aux_acumulado.ToString
-                        dr("Media") = "$ " + aux_media.ToString
+                    dr("Gan Diaria") = "$ " + aux_ganancia_diaria.ToString
+                    dr("Gan Acumulado") = "$ " + aux_acumulado.ToString
+                    dr("Media") = "$ " + aux_media.ToString
 
-                        acumulado_anterior = acumulado
-                        media_anterior = media
+                    acumulado_anterior = acumulado
+                    media_anterior = media
 
                     If RbnCompraDiaria.Checked = False Then
                         compra_diaria = demanda
                     End If
                     faltante = 0
                 End If
-                    If fila >= desde And fila <= hasta Then
+                If fila >= desde And fila <= hasta Then
                     dt.Rows.Add(dr)
                 End If
             Next
@@ -368,5 +396,65 @@
         LblPrecioCompraFaltante.Visible = False
         TxtPrecioCompraFaltante.Visible = False
         TxtPrecioCompraFaltante.Text = ""
+    End Sub
+
+    Private Sub txt_precio_compra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precio_compra.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txt_precio_venta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precio_venta.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txt_precio_reventa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_precio_reventa.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txt_compra_diaria_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_compra_diaria.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub TxtPrecioCompraFaltante_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPrecioCompraFaltante.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub txt_faltante_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_faltante.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        End If
     End Sub
 End Class

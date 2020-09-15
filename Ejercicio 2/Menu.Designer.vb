@@ -30,7 +30,6 @@ Partial Class frm_menu
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtGananciaPromedio = New System.Windows.Forms.TextBox()
-        Me.cmdSimulacion = New System.Windows.Forms.Button()
         Me.cmb_tabla_referencia = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RbnCompraDiaria = New System.Windows.Forms.RadioButton()
@@ -123,15 +122,6 @@ Partial Class frm_menu
         Me.txtGananciaPromedio.Size = New System.Drawing.Size(100, 20)
         Me.txtGananciaPromedio.TabIndex = 7
         '
-        'cmdSimulacion
-        '
-        Me.cmdSimulacion.Location = New System.Drawing.Point(291, 49)
-        Me.cmdSimulacion.Name = "cmdSimulacion"
-        Me.cmdSimulacion.Size = New System.Drawing.Size(136, 23)
-        Me.cmdSimulacion.TabIndex = 6
-        Me.cmdSimulacion.Text = "Ver Simulacion"
-        Me.cmdSimulacion.UseVisualStyleBackColor = True
-        '
         'cmb_tabla_referencia
         '
         Me.cmb_tabla_referencia.Location = New System.Drawing.Point(458, 49)
@@ -212,7 +202,6 @@ Partial Class frm_menu
         '
         'txt_precio_compra
         '
-        Me.txt_precio_compra.Enabled = False
         Me.txt_precio_compra.Location = New System.Drawing.Point(116, 28)
         Me.txt_precio_compra.Name = "txt_precio_compra"
         Me.txt_precio_compra.Size = New System.Drawing.Size(52, 20)
@@ -230,7 +219,6 @@ Partial Class frm_menu
         '
         'txt_faltante
         '
-        Me.txt_faltante.Enabled = False
         Me.txt_faltante.Location = New System.Drawing.Point(116, 115)
         Me.txt_faltante.Name = "txt_faltante"
         Me.txt_faltante.Size = New System.Drawing.Size(52, 20)
@@ -239,7 +227,6 @@ Partial Class frm_menu
         '
         'txt_precio_venta
         '
-        Me.txt_precio_venta.Enabled = False
         Me.txt_precio_venta.Location = New System.Drawing.Point(116, 57)
         Me.txt_precio_venta.Name = "txt_precio_venta"
         Me.txt_precio_venta.Size = New System.Drawing.Size(52, 20)
@@ -266,7 +253,6 @@ Partial Class frm_menu
         '
         'txt_precio_reventa
         '
-        Me.txt_precio_reventa.Enabled = False
         Me.txt_precio_reventa.Location = New System.Drawing.Point(116, 86)
         Me.txt_precio_reventa.Name = "txt_precio_reventa"
         Me.txt_precio_reventa.Size = New System.Drawing.Size(52, 20)
@@ -275,7 +261,7 @@ Partial Class frm_menu
         '
         'cmbCargarEjemplo
         '
-        Me.cmbCargarEjemplo.Location = New System.Drawing.Point(458, 90)
+        Me.cmbCargarEjemplo.Location = New System.Drawing.Point(458, 85)
         Me.cmbCargarEjemplo.Name = "cmbCargarEjemplo"
         Me.cmbCargarEjemplo.Size = New System.Drawing.Size(136, 23)
         Me.cmbCargarEjemplo.TabIndex = 3
@@ -284,7 +270,7 @@ Partial Class frm_menu
         '
         'cmbLimpiar
         '
-        Me.cmbLimpiar.Location = New System.Drawing.Point(291, 90)
+        Me.cmbLimpiar.Location = New System.Drawing.Point(291, 49)
         Me.cmbLimpiar.Name = "cmbLimpiar"
         Me.cmbLimpiar.Size = New System.Drawing.Size(136, 23)
         Me.cmbLimpiar.TabIndex = 5
@@ -315,7 +301,6 @@ Partial Class frm_menu
         '
         'TxtPrecioCompraFaltante
         '
-        Me.TxtPrecioCompraFaltante.Enabled = False
         Me.TxtPrecioCompraFaltante.Location = New System.Drawing.Point(116, 74)
         Me.TxtPrecioCompraFaltante.Name = "TxtPrecioCompraFaltante"
         Me.TxtPrecioCompraFaltante.Size = New System.Drawing.Size(52, 20)
@@ -365,7 +350,6 @@ Partial Class frm_menu
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.cmb_tabla_referencia)
-        Me.Controls.Add(Me.cmdSimulacion)
         Me.Controls.Add(Me.txtGananciaPromedio)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -395,7 +379,6 @@ Partial Class frm_menu
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtGananciaPromedio As TextBox
-    Friend WithEvents cmdSimulacion As Button
     Friend WithEvents cmb_tabla_referencia As Button
     Friend WithEvents GroupBox2 As GroupBox
     Private WithEvents txt_compra_diaria As TextBox
