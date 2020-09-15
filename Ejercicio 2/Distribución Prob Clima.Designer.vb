@@ -38,7 +38,7 @@ Partial Class frm_Distribución_Prob_Clima
         Me.grilla_clima.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grilla_clima.Location = New System.Drawing.Point(0, 0)
         Me.grilla_clima.Name = "grilla_clima"
-        Me.grilla_clima.Size = New System.Drawing.Size(445, 190)
+        Me.grilla_clima.Size = New System.Drawing.Size(428, 132)
         Me.grilla_clima.TabIndex = 2
         '
         'Column1
@@ -80,7 +80,7 @@ Partial Class frm_Distribución_Prob_Clima
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(445, 190)
+        Me.ClientSize = New System.Drawing.Size(428, 132)
         Me.Controls.Add(Me.grilla_clima)
         Me.Name = "frm_Distribución_Prob_Clima"
         Me.Text = "Distribución Prob Clima"
