@@ -49,10 +49,10 @@ Partial Class frm_menu
         Me.cmbLimpiar = New System.Windows.Forms.Button()
         Me.cmbGenerar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtPrecioCompraFaltante = New System.Windows.Forms.TextBox()
         Me.LblPrecioCompraFaltante = New System.Windows.Forms.Label()
         Me.RbnSiComprar = New System.Windows.Forms.RadioButton()
         Me.RbnNoComprar = New System.Windows.Forms.RadioButton()
-        Me.TxtPrecioCompraFaltante = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.groupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -313,6 +313,14 @@ Partial Class frm_menu
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Compra De Mercaderia Faltante"
         '
+        'TxtPrecioCompraFaltante
+        '
+        Me.TxtPrecioCompraFaltante.Enabled = False
+        Me.TxtPrecioCompraFaltante.Location = New System.Drawing.Point(116, 74)
+        Me.TxtPrecioCompraFaltante.Name = "TxtPrecioCompraFaltante"
+        Me.TxtPrecioCompraFaltante.Size = New System.Drawing.Size(52, 20)
+        Me.TxtPrecioCompraFaltante.TabIndex = 3
+        '
         'LblPrecioCompraFaltante
         '
         Me.LblPrecioCompraFaltante.AutoSize = True
@@ -344,13 +352,6 @@ Partial Class frm_menu
         Me.RbnNoComprar.TabStop = True
         Me.RbnNoComprar.Text = "No"
         Me.RbnNoComprar.UseVisualStyleBackColor = True
-        '
-        'TxtPrecioCompraFaltante
-        '
-        Me.TxtPrecioCompraFaltante.Location = New System.Drawing.Point(116, 74)
-        Me.TxtPrecioCompraFaltante.Name = "TxtPrecioCompraFaltante"
-        Me.TxtPrecioCompraFaltante.Size = New System.Drawing.Size(52, 20)
-        Me.TxtPrecioCompraFaltante.TabIndex = 3
         '
         'frm_menu
         '

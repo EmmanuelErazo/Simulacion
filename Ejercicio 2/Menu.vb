@@ -277,10 +277,11 @@
                         acumulado_anterior = acumulado
                         media_anterior = media
 
-                        If RbnCompraDiaria.Checked = False Then
-                            compra_diaria = demanda
-                        End If
+                    If RbnCompraDiaria.Checked = False Then
+                        compra_diaria = demanda
                     End If
+                    faltante = 0
+                End If
                     If fila >= desde And fila <= hasta Then
                     dt.Rows.Add(dr)
                 End If
